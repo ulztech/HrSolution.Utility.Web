@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+@inject IAuthenticationService AuthenticationService 
+ 
+<div class="page">
+    @if (AuthenticationService.User != null)
+    {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
+    <main> 
+        <div class="top-row px-4">
+            @if (AuthenticationService.User != null)
+            {
+                <a href="/logout" target="_self">logout</a>
+            }
+            else
+            {
+                <a href="/login" target="_self">Login</a>
+            }  
+        </div> 
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+

@@ -1,0 +1,94 @@
+﻿@page "/reader"
+@using BlazorBarcodeScanner.ZXing.JS
+
+@attribute [Authorize]
+@inject IUserService UserService 
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject IHttpService Http
+@inject ILocalStorageService Storage
+
+<PageTitle>UIXE Attendance</PageTitle>
+
+<div class="container-fluid">
+
+    @if (readingData)
+    {
+        <div class="row">
+            <div class="col-sm">Reading data...</div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <h3>Time in</h3>
+            <div class="col-sm">Please scan your ID here.</div>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-sm">
+            <BlazorBarcodeScanner.ZXing.JS.BarcodeReader @ref="_reader"
+                                                         StartCameraAutomatically="true"
+                                                         Title="@theTime"
+                                                         VideoWidth="512"
+                                                         VideoHeight="500"
+                                                         StreamWidth="700"
+                                                         StreamHeight="700"
+                                                         ShowReset="false"
+                                                         ShowStart="false"
+                                                         ShowResult="false"
+                                                         ShowToggleTorch="false"
+                                                         ShowVideoDeviceList="false"
+                                                         OnBarcodeReceived="LocalReceivedBarcodeText" />
+        </div>
+    </div>
+    <div class="row">
+        <div style="max-width:auto">
+            <img src="@_imgSrc" style="width:100%;height:auto;@(string.IsNullOrWhiteSpace(_imgSrc) ? "display:none;" : "")" />
+        </div>
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="row">
+            <div class="col-10">
+                <div class="alert alert-danger" role="alert">
+                    @errorMessage
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@code {
+    bool readingData;
+
+    string errorMessage;
+    string theTime;
+    Timer aTimer;
+
+    protected override void OnInitialized()
+    {
+        //try
+        //{
+        //    readingData = false;
+
+        //    aTimer = new Timer(async _ =>
+        //    {
+
+        //        theTime = await Http.Get<string>($"ThirdParty/GetServerTime");
+
+        //        await InvokeAsync(StateHasChanged);
+        //    }, null, 0, 10000);
+        //}
+        //catch{} 
+    }
+
+
+    public void Dispose()
+    {
+        aTimer?.Dispose();
+    }
+}

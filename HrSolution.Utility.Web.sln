@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrSolution.Utility.Web.Client", "HrSolution.Utility.Web\Client\HrSolution.Utility.Web.Client.csproj", "{81990D74-7B96-4E8F-ADA5-954C448B47C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrSolution.Utility.Web.Server", "HrSolution.Utility.Web\Server\HrSolution.Utility.Web.Server.csproj", "{3E7CFDE0-0822-43AF-B8F5-E2899791BADD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81990D74-7B96-4E8F-ADA5-954C448B47C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81990D74-7B96-4E8F-ADA5-954C448B47C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81990D74-7B96-4E8F-ADA5-954C448B47C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81990D74-7B96-4E8F-ADA5-954C448B47C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7CFDE0-0822-43AF-B8F5-E2899791BADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7CFDE0-0822-43AF-B8F5-E2899791BADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7CFDE0-0822-43AF-B8F5-E2899791BADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7CFDE0-0822-43AF-B8F5-E2899791BADD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F527C5B-2096-43B6-BF52-6A52EBA4B832}
+	EndGlobalSection
+EndGlobal
