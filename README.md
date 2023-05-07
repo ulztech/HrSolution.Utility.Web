@@ -1,4 +1,4 @@
-# HRIS UIXE Solution
+# UIXE QR Reader Application
 
 ## Domain Models
 
