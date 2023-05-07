@@ -22,6 +22,7 @@ else
             <GridColumn Field=@nameof(AttendanceDto.LastName) HeaderText="Last Name" TextAlign="TextAlign.Left" Width="150"></GridColumn>
             <GridColumn Field=@nameof(AttendanceDto.DateTimeIn) HeaderText="Date In" Format="yyyy-MM-dd" TextAlign="TextAlign.Left" Width="100"></GridColumn>
             <GridColumn Field=@nameof(AttendanceDto.TimeIn) HeaderText="Time In" Type="ColumnType.TimeOnly" TextAlign="TextAlign.Left" Width="100"></GridColumn>
+            <GridColumn Field=@nameof(AttendanceDto.DateTimeOut) HeaderText="Date Out" Format="yyyy-MM-dd" TextAlign="TextAlign.Left" Width="100"></GridColumn>
             <GridColumn Field=@nameof(AttendanceDto.TimeOut) HeaderText="Time Out" Type="ColumnType.TimeOnly" TextAlign="TextAlign.Left" Width="100"></GridColumn>
         </GridColumns>
     </SfGrid>
